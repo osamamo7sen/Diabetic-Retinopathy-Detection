@@ -1,0 +1,58 @@
+# Architectures
+build_model.base_filters = 4
+build_model.n_blocks = 5
+build_model.dense_units = 32
+build_model.dropout_rate = 0.2
+# build_model.model_name = 'kaggle_challange_model'
+# build_model.model_name = 'hendo_resnet'
+# build_model.model_name = 'vgg_like'
+build_model.model_name = 'inception_with_squeeze_and_ignore'
+
+# Layers
+vgg_block.kernel_size = (3, 3)
+# residual_block.kernel_size = (3, 3)
+# residual_block.res_filters = 3
+
+
+
+# Layers - residual block
+residual_block.kernel_size = 3
+
+# Training
+Trainer.total_steps = 1e3
+Trainer.log_interval = 5e1
+Trainer.ckpt_interval = 2e2
+
+load.name = 'idrid'
+load.data_dir = '/home/data/'
+# load.data_dir= '/no_backups/s1373/datasets/'
+
+#load.data_dir = '/home/mohammoa/idrid'
+#load.data_dir= '/no_backups/s1373/datasets/'
+
+prepare.img_height = 256
+prepare.img_width = 256
+prepare.batch_size = 32
+prepare.caching = False
+loadIDRID.train_percentage = 70
+loadIDRID.btgraham = True
+prepare.balance_dataset = True
+prepare.binary_classification = True
+load_btgraham.target_pixel = 256
+
+#Visualization
+
+#augment
+augment.random_brightness = True
+augment.random_saturation = True
+augment.random_hue = True
+augment.random_contrast = True
+augment.horizontal_flip = True
+augment.vertical_flip = True
+augment.random_crop = True
+augment.intermediate_size = (280,280)
+augment.skip_probability = 0.05
+
+Trainer.frozen_steps = 500
+
+
