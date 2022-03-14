@@ -1,7 +1,3 @@
-# Team12
-- Mohamed Abdelsamad (st170269)
-- Osama Mohammed (st170249)
-
 # How to run the code
 
 * Python version: 3.8.5
